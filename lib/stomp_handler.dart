@@ -53,7 +53,7 @@ class StompHandler {
     try {
       _channel = await platform.connect(config);
       _channel!.stream.listen(_onData, onError: _onError, onDone: _onDone);
-      _connectToStomp();
+      // _connectToStomp();
     } catch (err) {
       _onError(err);
       if (config.reconnectDelay.inMilliseconds == 0) {
